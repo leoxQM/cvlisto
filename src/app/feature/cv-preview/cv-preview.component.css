@@ -1,0 +1,13 @@
+.preview-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.preview-scaler {
+  transition: transform 0.2s ease;
+  transform-origin: top left;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}

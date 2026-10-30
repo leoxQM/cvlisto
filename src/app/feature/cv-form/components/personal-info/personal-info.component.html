@@ -1,0 +1,37 @@
+<div class="flex flex-col gap-4 p-4">
+  <h2 class="text-lg font-semibold text-gray-700">Información Personal</h2>
+
+  <form [formGroup]="form" class="flex flex-col gap-3">
+
+    <div class="flex flex-col gap-1">
+      <label class="text-sm text-gray-600">Nombre completo</label>
+      <input pInputText formControlName="fullName" placeholder="Ej: Juan Pérez" class="w-full" />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label class="text-sm text-gray-600">Profesión</label>
+      <input pInputText formControlName="profession" placeholder="Ej: Desarrollador Full Stack" class="w-full" />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label class="text-sm text-gray-600">Email</label>
+      <input pInputText formControlName="email" placeholder="Ej: juan@email.com" class="w-full" />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label class="text-sm text-gray-600">Teléfono</label>
+      <input pInputText formControlName="phone" placeholder="Ej: +51 999 999 999" class="w-full" />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label class="text-sm text-gray-600">Ubicación</label>
+      <input pInputText formControlName="location" placeholder="Ej: Lima, Perú" class="w-full" />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label class="text-sm text-gray-600">Página Web</label>
+      <input pInputText formControlName="paginaWeb" placeholder="Ej: https://juanperez.com" class="w-full" />
+    </div>
+
+  </form>
+</div>

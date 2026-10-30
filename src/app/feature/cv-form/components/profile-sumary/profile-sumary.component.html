@@ -1,0 +1,17 @@
+<div class="flex flex-col gap-4 p-4">
+  <h2 class="text-lg font-semibold text-gray-700">Perfil Profesional</h2>
+
+  <div class="flex flex-col gap-1">
+    <label class="text-sm text-gray-600">
+      Escribe un resumen atractivo sobre tu carrera
+    </label>
+    <textarea
+      pTextarea
+      [formControl]="summaryControl"
+      placeholder="Ej: Desarrollador con 5 años de experiencia en..."
+      rows="5"
+      class="w-full resize-none">
+    </textarea>
+  </div>
+
+</div>

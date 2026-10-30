@@ -1,0 +1,118 @@
+<div class="cv-page">
+
+  <!-- Cabecera -->
+  <div class="cv-header">
+    @if (cv().personalInfo.photoUrl) {
+    <img [src]="cv().personalInfo.photoUrl" alt="Foto" class="cv-photo" />
+    }
+    <div>
+      <h1 class="cv-name">{{ cv().personalInfo.fullName || 'Tu Nombre Completo' }}</h1>
+      <h2 class="cv-profession" [style.color]="cv().config.primaryColor">
+        {{ cv().personalInfo.profession || 'Tu Profesión' }}
+      </h2>
+      <div class="cv-contact">
+        @if (cv().personalInfo.email) {
+        <span>{{ cv().personalInfo.email }}</span>
+        }
+        @if (cv().personalInfo.phone) {
+        <span>{{ cv().personalInfo.phone }}</span>
+        }
+        @if (cv().personalInfo.location) {
+        <span>{{ cv().personalInfo.location }}</span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Línea decorativa -->
+  <div class="cv-divider" [style.background-color]="cv().config.primaryColor"></div>
+
+  <!-- Perfil -->
+  @if (cv().profileSummary) {
+  <div class="cv-section">
+    <p class="cv-summary">{{ cv().profileSummary }}</p>
+  </div>
+  }
+
+  <!-- Experiencia -->
+  @if (cv().experience.length > 0) {
+  <div class="cv-section">
+    <h3 class="cv-section-title" [style.color]="cv().config.primaryColor">Experiencia</h3>
+    @for (exp of cv().experience; track exp.id) {
+    <div class="cv-item">
+      <div class="cv-item-row">
+        <span class="cv-item-title">{{ exp.position }}</span>
+        <span class="cv-item-date">{{ exp.startDate }} — {{ exp.isCurrent ? 'Presente' : exp.endDate }}</span>
+      </div>
+      <span class="cv-item-sub">{{ exp.company }}</span>
+      @if (exp.responsibilities) {
+      <p class="cv-text">{{ exp.responsibilities }}</p>
+      }
+    </div>
+    }
+  </div>
+  }
+
+  <!-- Educación -->
+  @if (cv().education.length > 0) {
+  <div class="cv-section">
+    <h3 class="cv-section-title" [style.color]="cv().config.primaryColor">Educación</h3>
+    @for (edu of cv().education; track edu.id) {
+    <div class="cv-item">
+      <div class="cv-item-row">
+        <span class="cv-item-title">{{ edu.degree }}</span>
+        <span class="cv-item-date">{{ edu.endYear }}</span>
+      </div>
+      <span class="cv-item-sub">{{ edu.institution }}</span>
+    </div>
+    }
+  </div>
+  }
+
+  <!-- Fila inferior: Skills, Idiomas, Certificaciones -->
+  <div class="cv-bottom">
+
+    <div class="cv-bottom-row">
+      @if (cv().skills.length > 0) {
+      <div class="cv-bottom-section">
+        <h3 class="cv-section-title" [style.color]="cv().config.primaryColor">Habilidades</h3>
+        <div class="cv-skills">
+          @for (skill of cv().skills; track skill.id) {
+          <span class="cv-skill-tag" [style.border-color]="cv().config.primaryColor"
+            [style.color]="cv().config.primaryColor">
+            {{ skill.name }}
+          </span>
+          }
+        </div>
+      </div>
+      }
+
+      @if (cv().languages.length > 0) {
+      <div class="cv-bottom-section">
+        <h3 class="cv-section-title" [style.color]="cv().config.primaryColor">Idiomas</h3>
+        @for (lang of cv().languages; track lang.id) {
+        <div class="cv-item-row">
+          <span class="cv-item-title">{{ lang.name }}</span>
+          <span class="cv-item-date">{{ lang.level }}</span>
+        </div>
+        }
+      </div>
+      }
+    </div>
+
+    @if (cv().certifications.length > 0) {
+    <div class="cv-bottom-section cv-bottom-full">
+      <h3 class="cv-section-title" [style.color]="cv().config.primaryColor">Certificaciones</h3>
+      @for (cert of cv().certifications; track cert.id) {
+      <div class="cv-item-row">
+        <span class="cv-item-date">{{ cert.year }}</span>
+        <span class="cv-item-title">{{ cert.name }}</span>
+      </div>
+      }
+    </div>
+    }
+
+  </div>
+
+
+</div>

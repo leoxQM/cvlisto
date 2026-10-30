@@ -1,0 +1,172 @@
+.cv-page {
+  width: 595px;
+  min-height: 842px;
+  background: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+.cv-header-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 40px;
+  color: white;
+}
+
+.cv-photo {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.6);
+  flex-shrink: 0;
+}
+
+.cv-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.cv-profession {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cv-header-contact {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 8px 40px;
+}
+
+.cv-contact-item {
+  font-size: 9px;
+  color: #475569;
+}
+
+.cv-body {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cv-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cv-section-line {
+  flex: 1;
+  height: 1px;
+}
+
+.cv-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cv-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.cv-item-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.cv-item-content {
+  flex: 1;
+}
+
+.cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cv-item-title {
+  font-weight: 600;
+  font-size: 11px;
+  color: #0f172a;
+}
+
+.cv-item-company {
+  font-size: 10px;
+  color: #64748b;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cv-item-date {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.cv-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.cv-text {
+  font-size: 10px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 4px 0 0 0;
+  white-space: pre-wrap;
+}
+
+.cv-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.cv-bottom-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.cv-skill-tag {
+  font-size: 9px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}

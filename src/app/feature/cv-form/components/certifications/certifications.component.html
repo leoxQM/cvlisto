@@ -1,0 +1,24 @@
+<app-dynamic-list
+  title="Cursos y Certificaciones"
+  [items]="cvService.cvData().certifications"
+  (onAdd)="cvService.addCertification()"
+  (onRemove)="onRemove($event)">
+
+  <ng-template let-cert>
+    <form [formGroup]="getForm(cert)" class="flex flex-col gap-3 pt-2 pr-8">
+
+      <div class="flex gap-3">
+        <div class="flex flex-col gap-1 w-1/4">
+          <label class="text-sm text-gray-600">Año</label>
+          <input pInputText formControlName="year" placeholder="Ej: 2023" class="w-full" />
+        </div>
+        <div class="flex flex-col gap-1 w-3/4">
+          <label class="text-sm text-gray-600">Nombre del curso</label>
+          <input pInputText formControlName="name" placeholder="Ej: Angular Avanzado" class="w-full" />
+        </div>
+      </div>
+
+    </form>
+  </ng-template>
+
+</app-dynamic-list>

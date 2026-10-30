@@ -1,0 +1,33 @@
+<app-dynamic-list
+  title="Educación"
+  [items]="cvService.cvData().education"
+  (onAdd)="cvService.addEducation()"
+  (onRemove)="onRemove($event)">
+
+  <ng-template let-edu>
+    <form [formGroup]="getForm(edu)" class="flex flex-col gap-3 pt-2 pr-8">
+
+      <div class="flex flex-col gap-1">
+        <label class="text-sm text-gray-600">Carrera o Título</label>
+        <input pInputText formControlName="degree" placeholder="Ej: Ingeniería de Sistemas" class="w-full" />
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="text-sm text-gray-600">Institución</label>
+        <input pInputText formControlName="institution" placeholder="Ej: Universidad Nacional" class="w-full" />
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="text-sm text-gray-600">Año de inicio</label>
+        <input pInputText formControlName="startYear" placeholder="Ej: 2021" class="w-full" />
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label class="text-sm text-gray-600">Año de finalización</label>
+        <input pInputText formControlName="endYear" placeholder="Ej: 2021" class="w-full" />
+      </div>
+
+    </form>
+  </ng-template>
+
+</app-dynamic-list>

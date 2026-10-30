@@ -1,0 +1,48 @@
+<div class="flex flex-col gap-4 p-4">
+  <h2 class="text-lg font-semibold text-gray-700">Diseño del CV</h2>
+
+  <!-- Selector de template -->
+  <div class="flex flex-col gap-2">
+    <label class="text-sm text-gray-600">Tipo de CV</label>
+    <div class="grid grid-cols-2 gap-2">
+      @for (template of templates; track template.id) {
+        <button
+          class="flex flex-col items-center justify-center gap-1 p-3 rounded-lg border-2 transition-all cursor-pointer"
+          [class.border-blue-500]="cv().config.template === template.id"
+          [class.bg-blue-50]="cv().config.template === template.id"
+          [class.border-gray-200]="cv().config.template !== template.id"
+          [class.bg-white]="cv().config.template !== template.id"
+          (click)="selectTemplate(template.id)">
+          <i [class]="template.icon + ' text-xl'"
+             [class.text-blue-500]="cv().config.template === template.id"
+             [class.text-gray-400]="cv().config.template !== template.id">
+          </i>
+          <span class="text-xs font-medium"
+                [class.text-blue-500]="cv().config.template === template.id"
+                [class.text-gray-500]="cv().config.template !== template.id">
+            {{ template.label }}
+          </span>
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Selector de color -->
+  <div class="flex flex-col gap-2">
+    <label class="text-sm text-gray-600">Color principal</label>
+    <div class="flex gap-2 flex-wrap">
+      @for (color of colors; track color.value) {
+        <button
+          class="w-8 h-8 rounded-full border-2 transition-all cursor-pointer"
+          [style.background-color]="color.value"
+          [class.border-gray-800]="cv().config.primaryColor === color.value"
+          [class.scale-110]="cv().config.primaryColor === color.value"
+          [class.border-transparent]="cv().config.primaryColor !== color.value"
+          [pTooltip]="color.label"
+          (click)="selectColor(color.value)">
+        </button>
+      }
+    </div>
+  </div>
+
+</div>

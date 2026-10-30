@@ -1,0 +1,31 @@
+<div class="flex flex-col items-center gap-4 w-auto">
+  <div class="flex justify-center w-full px-4">
+    <p-button
+      label="Generar y Descargar PDF"
+      icon="pi pi-download"
+      [loading]="isGenerating()"
+      [disabled]="isGenerating()"
+      severity="primary"
+      (onClick)="onGeneratePdf()"
+      class="w-[50%]"
+      styleClass="w-full"
+    />
+  </div>
+  <div class="preview-wrapper">
+    <div
+        class="preview-scaler"
+        [style.transform]="'scale(' + scale() + ')'"
+        [style.width.px]="595"
+        [style.height]="'calc(842px * ' + scale() + ')'"
+        [style.transform-origin]="'top center'">
+        @switch (cv().config.template) {
+        @case ('ats') { <app-cv-template-ats /> }
+        @case ('modern') { <app-cv-template-modern /> }
+        @case ('minimal') { <app-cv-template-minimal /> }
+        @case ('executive') { <app-cv-template-executive /> }
+        @default { <app-cv-template-ats /> }
+      }
+    </div>
+  </div>
+
+</div>

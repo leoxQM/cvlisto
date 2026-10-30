@@ -1,0 +1,40 @@
+<div class="flex w-full flex-col py-4">
+
+  <div class="px-2 mx-auto">
+    <h1 class="text-xl font-bold text-center text-gray-800">Crear CV</h1>
+    <p class="text-sm text-center text-gray-500">Completa los datos para generar tu CV</p>
+  </div>
+
+  <button
+    class="mx-4 mb-2 text-xs text-gray-400 underline"
+    (click)="fillTestData()">
+    Llenar datos de prueba
+  </button>
+
+  <app-cv-config />
+
+  <p-divider />
+  <app-personal-info />
+
+  <p-divider />
+  <app-photo-upload />
+
+  <p-divider />
+  <app-profile-sumary />
+
+  <p-divider />
+  <app-experience />
+
+  <p-divider class="my-24" />
+  <app-education />
+
+  <p-divider />
+  <app-skills />
+
+  <p-divider />
+  <app-languages />
+
+  <p-divider />
+  <app-certifications />
+
+</div>

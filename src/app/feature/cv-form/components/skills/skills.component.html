@@ -1,0 +1,16 @@
+<app-dynamic-list
+  title="Habilidades"
+  [items]="cvService.cvData().skills"
+  (onAdd)="cvService.addSkill()"
+  (onRemove)="onRemove($event)">
+
+  <ng-template let-skill>
+    <form [formGroup]="getForm(skill)" class="pt-2 pr-8">
+      <div class="flex flex-col gap-1">
+        <label class="text-sm text-gray-600">Habilidad</label>
+        <input pInputText formControlName="name" placeholder="Ej: Angular, Trabajo en equipo" class="w-full" />
+      </div>
+    </form>
+  </ng-template>
+
+</app-dynamic-list>
